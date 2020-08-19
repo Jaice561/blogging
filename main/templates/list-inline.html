@@ -1,0 +1,17 @@
+<div class="col-12 col-md-6 mx-auto">
+<div class="card">
+    <div class="card-body">
+        <h5 class="card-title">{{ object.title }}</h5>
+        <p class="card-text">
+            {% if truncate %}
+                {{ object.content|linebreaks|truncatewords:30 }}
+            {% else %}
+                {{ object.content|linebreaks }}
+            {% endif %}
+        </p>
+        {% if not detail %}
+        <a href="{{ object.get_absolute_url }}">View</a>
+        {% endif %}
+    </div>
+</div>
+</div>

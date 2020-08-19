@@ -2,18 +2,10 @@
 
 {% block content %}
 
-{{ title }}
+<h1>{{ title }}</h1>
 
-{{ request.user }}
-
-{{ request.path }}
-
-{{ user }}
-
-{{ user.is_authenticated }}
-
-    {% for a in list %}
-        <li>{{ a }}</li>
+    {% for a in blog_list %}
+        {% include 'list-inline.html' with object=a truncate=True detail=False %}
     {% endfor %}
 
 {% endblock %}
